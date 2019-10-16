@@ -36,35 +36,30 @@ class Home extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Text("Produits"),
+            child: new Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return new Image.network(
+                  "http://via.placeholder.com/288x188",
+                  fit: BoxFit.fill,
+                );
+              },
+              itemCount: 10,
+              viewportFraction: 0.8,
+              scale: 0.9,
+            ),
           ),
-
           Expanded(
             child: new Swiper(
-                layout: SwiperLayout.CUSTOM,
-                customLayoutOption: new CustomLayoutOption(
-                    startIndex: -1,
-                    stateCount: 3
-                ).addRotate([
-                  -45.0/180,
-                  0.0,
-                  45.0/180
-                ]).addTranslate([
-                  new Offset(370.0, 0),
-                  new Offset(0.0, 0.0),
-                  new Offset(-370.0, 0)
-                ]),
-                itemWidth: 300.0,
-                itemHeight: 200.0,
-                itemBuilder: (context, index) {
-                  return new Container(
-                    color: Colors.grey,
-                    child: new Center(
-                      child: new Text("$index"),
-                    ),
-                  );
-                },
-                itemCount: 10),
+              itemBuilder: (BuildContext context, int index) {
+                return new Image.network(
+                  "http://via.placeholder.com/288x188",
+                  fit: BoxFit.fill,
+                );
+              },
+              itemCount: 10,
+              viewportFraction: 0.8,
+              scale: 0.9,
+            ),
           )
         ],
       ),
