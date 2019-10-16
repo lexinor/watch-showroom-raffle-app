@@ -1,9 +1,9 @@
 import 'package:augarde_showroom/main.dart';
-import 'package:augarde_showroom/showroom.dart';
+import 'package:augarde_showroom/raffle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Raffle extends StatelessWidget {
+class Showroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,22 @@ class Raffle extends StatelessWidget {
         centerTitle: true ,
         backgroundColor: Colors.indigoAccent,
       ),
-      body: Text("Test"),
+      body: Container(
+        child: Row(
+          children: <Widget>[
+            Column(
+              children: <Widget>[
+                Text("Bloc 1")
+              ],
+            ),
+            Column(
+              children: <Widget>[
+                Text("Bloc 2")
+              ],
+            )
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNav(),
     );
   }
@@ -50,8 +65,8 @@ class _BottomNavState extends State<BottomNav> {
         }
         break;
 
-        case 2: {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Showroom()));
+        case 1: {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Raffle()));
         }
         break;
 
@@ -64,4 +79,3 @@ class _BottomNavState extends State<BottomNav> {
     });
   }
 }
-
