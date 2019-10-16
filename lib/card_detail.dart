@@ -9,7 +9,11 @@ class _CardDetailState extends State<CardDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ,
+      appBar: AppBar(
+        title: Text("Watch detail"),
+        backgroundColor: Colors.deepPurpleAccent,
+      ),
+      body: Text("Detail page"),
     );
   }
 }
