@@ -1,3 +1,4 @@
+import 'package:augarde_showroom/card_detail.dart';
 import 'package:augarde_showroom/home.dart';
 import 'package:augarde_showroom/raffle.dart';
 import 'package:augarde_showroom/showroom.dart';
@@ -86,36 +87,26 @@ class _CardProductState extends State<CardProduct> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const ListTile(
-              leading: Icon(Icons.album),
-              title: Text('The Enchanted Nightingale'),
-              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-            ),
-            ButtonTheme.bar(
-              // make buttons use the appropriate styles for cards
-              child: ButtonBar(
-                children: <Widget>[
-                  FlatButton(
-                    child: const Text('BUY TICKETS'),
-                    onPressed: () {
-                      /* ... */
-                    },
-                  ),
-                  FlatButton(
-                    child: const Text('LISTEN'),
-                    onPressed: () {
-                      /* ... */
-                    },
-                  ),
-                ],
+            new ListTile(
+              leading: Image.network(
+                "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
+                fit: BoxFit.fill,
               ),
+              title: Text('Montre 1'),
+              subtitle: Text('Petite description de la montre'),
+              onTap: onCardTap,
             ),
           ],
         ),
       ),
     );
   }
+  void onCardTap(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CardDetail()));
+  }
 }
+
+
 
 
 
