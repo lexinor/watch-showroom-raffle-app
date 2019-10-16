@@ -20,9 +20,28 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.indigoAccent,
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          Expanded(
+            child: new Swiper(
+              itemBuilder: (BuildContext context, int index) {
+                return new Image.network(
+                  "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
+                  fit: BoxFit.scaleDown,
+                );
+              },
+              itemCount: 10,
+              viewportFraction: 0.8,
+              scale: 0.9,
+            ),
+          ),
+          Container(
+            color: Colors.indigoAccent,
+            margin: EdgeInsets.all(20.0),
+            child: Text('Produits'.toUpperCase(),style: TextStyle(
+              fontSize: 25,
+            ),),
+          ),
           Expanded(
             child: new Swiper(
               itemBuilder: (BuildContext context, int index) {
@@ -37,21 +56,10 @@ class Home extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.all(20.0) ,
-            child: Text('Produits'),
-          ),
-          Expanded(
-            child: new Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return new Image.network(
-                  "http://via.placeholder.com/288x188",
-                  fit: BoxFit.fill,
-                );
-              },
-              itemCount: 10,
-              viewportFraction: 0.8,
-              scale: 0.9,
-            ),
+            color: Colors.indigoAccent,
+          margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
+            child: Text('Raffles en cours',style: TextStyle(
+            fontSize: 25))
           ),
           Expanded(
             child: new Swiper(
@@ -73,6 +81,8 @@ class Home extends StatelessWidget {
   }
 }
 
+
+/// Bottom Navigation Widget
 class BottomNav extends StatefulWidget {
   @override
   _BottomNavState createState() => _BottomNavState();
