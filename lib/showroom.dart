@@ -6,31 +6,21 @@ import 'package:flutter/material.dart';
 class Showroom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Augarde Showroom", style: TextStyle(
-            fontSize: 25.0 ),
-        ),
-        centerTitle: true ,
-        backgroundColor: Colors.indigoAccent,
+    return Container(
+      child: Row(
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Text("Bloc 1")
+            ],
+          ),
+          Column(
+            children: <Widget>[
+              Text("Bloc 2")
+            ],
+          )
+        ],
       ),
-      body: Container(
-        child: Row(
-          children: <Widget>[
-            Column(
-              children: <Widget>[
-                Text("Bloc 1")
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Text("Bloc 2")
-              ],
-            )
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomNav(),
     );
   }
 }

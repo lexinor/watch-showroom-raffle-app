@@ -6,17 +6,7 @@ import 'package:flutter/material.dart';
 class Raffle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Augarde Showroom", style: TextStyle(
-            fontSize: 25.0 ),
-        ),
-        centerTitle: true ,
-        backgroundColor: Colors.indigoAccent,
-      ),
-      body: Text("Test"),
-      bottomNavigationBar: BottomNav(),
-    );
+    return Text("Test");
   }
 }
 
@@ -64,4 +54,3 @@ class _BottomNavState extends State<BottomNav> {
     });
   }
 }
-
