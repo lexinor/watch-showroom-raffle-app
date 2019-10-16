@@ -8,6 +8,7 @@ void main() => runApp(MaterialApp(
 ));
 
 class Home extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +17,7 @@ class Home extends StatelessWidget {
           fontSize: 25.0 ),
         ),
         centerTitle: true ,
-        backgroundColor: Colors.deepPurpleAccent,
+        backgroundColor: Colors.indigoAccent,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,6 +35,10 @@ class Home extends StatelessWidget {
               viewportFraction: 0.8,
               scale: 0.9,
             ),
+          ),
+          Container(
+            margin: EdgeInsets.all(20.0) ,
+            child: Text('Produits'),
           ),
           Expanded(
             child: new Swiper(
@@ -63,6 +68,34 @@ class Home extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: BottomNav(),
       );
   }
 }
+
+class BottomNav extends StatefulWidget {
+  @override
+  _BottomNavState createState() => _BottomNavState();
+}
+
+class _BottomNavState extends State<BottomNav> {
+  int _selectedIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      currentIndex: _selectedIndex,
+      onTap: _onItemTapped,
+      fixedColor: Colors.indigoAccent,
+      items: const <BottomNavigationBarItem>[ BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+        BottomNavigationBarItem(icon: Icon(Icons.business), title: Text("Showroom"))],
+    );
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+}
+
+
