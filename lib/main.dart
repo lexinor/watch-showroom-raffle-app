@@ -25,16 +25,17 @@ class HomeState extends State<Home>{
     return Scaffold(
       appBar: AppBar(
         title: Text("Augarde Showroom", style: TextStyle(
+            color: Colors.black,
             fontSize: 25.0),
         ),
         centerTitle: true,
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.white,
       ),
       body: _onItemTapped(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        fixedColor: Colors.indigoAccent,
+        fixedColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(

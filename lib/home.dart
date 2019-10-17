@@ -37,8 +37,8 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
                 Container(
                   color: Colors.transparent,
-                  margin: EdgeInsets.all(20.0),
-                  padding: EdgeInsets.all(20.0),
+                  margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                  padding: EdgeInsets.all(10.0),
                   width: MediaQuery.of(context).size.width,
                   // Access width of the parent
                   child: Text('Products',
@@ -66,11 +66,11 @@ class _HomeBodyState extends State<HomeBody> {
                   )
                 ),
                 Container(
-                    color: Colors.indigoAccent,
-                    margin: EdgeInsets.all(20.0),
-                    padding: EdgeInsets.all(20.0),
+                    color: Colors.transparent,
+                    margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                    padding: EdgeInsets.all(10.0),
                     width: MediaQuery.of(context).size.width,
-                    child: Text('Raffles', style: TextStyle(fontSize: 25))),
+                    child: Text('Raffles', style: TextStyle(fontSize: 25, color: Colors.black))),
                 Expanded(
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
