@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 
 void main() =>
     runApp(MaterialApp(
-        home: Home()
+        home: Home(),
+        theme: ThemeData(accentColor: Colors.black),
 
     ));
 

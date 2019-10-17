@@ -5,7 +5,7 @@ import 'package:augarde_showroom/services/webservice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:url_launcher/url_launcher.dart'
+import 'package:url_launcher/url_launcher.dart';
 
 class Showroom extends StatefulWidget {
   @override
@@ -36,6 +36,8 @@ class _ShowroomState extends State<Showroom> {
                       );
                     },
                     itemCount: snapshot.data.length,
+                    viewportFraction: 0.4,
+                    scale: 0.7,
                   );
                 }
                 return CircularProgressIndicator();
@@ -43,13 +45,13 @@ class _ShowroomState extends State<Showroom> {
             )
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height / 3.5,
-            left: MediaQuery.of(context).size.width / 2.67,
+            top: MediaQuery.of(context).size.height / 3.45,
+            left: MediaQuery.of(context).size.width / 2.63,
             child: Container(
               child: Image.asset(
                 "assets/cadrans/cadran.png",
                 height: 122,
-                width: 100,
+                width: 107,
                 fit: BoxFit.contain,
                 colorBlendMode: BlendMode.difference,
               ),
@@ -73,6 +75,8 @@ class _ShowroomState extends State<Showroom> {
                         );
                       },
                       itemCount: snapshot.data.length,
+                      viewportFraction: 0.4,
+                      scale: 0.7,
                     );
                   }
                   return CircularProgressIndicator();
@@ -99,9 +103,9 @@ class _ShowroomState extends State<Showroom> {
             child: MaterialButton(
               onPressed: _launchURL,
               child: Text("Ajouter au panier"),
-              color: Colors.indigo,
+              color: Colors.black,
               textColor: Colors.white,
-              hoverColor: Colors.indigoAccent,
+              hoverColor: Colors.black,
             ),
           )
         ],

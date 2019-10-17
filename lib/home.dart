@@ -57,8 +57,8 @@ class _HomeBodyState extends State<HomeBody> {
                             return CustomCard(product: snapshot.data[index],);
                           },
                           itemCount: snapshot.data.length,
-                          viewportFraction: 0.8,
-                          scale: 0.9,
+                          viewportFraction: 0.5,
+                          scale: 0.7,
                         );
                       }
                       return CircularProgressIndicator();
