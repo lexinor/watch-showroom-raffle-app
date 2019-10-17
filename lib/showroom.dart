@@ -12,7 +12,7 @@ class Showroom extends StatefulWidget {
 class _ShowroomState extends State<Showroom> {
   @override
   Widget build(BuildContext context) {
-    getAllBracelets();
+    //getAllBracelets();
     return Container(
       child: Stack(
         children: <Widget>[
@@ -21,47 +21,34 @@ class _ShowroomState extends State<Showroom> {
             height: MediaQuery.of(context).size.height,
             child: Swiper(
               itemBuilder: (BuildContext context, int index) {
-                return new Image.network(
-                  "http://via.placeholder.com/288x188",
-                  fit: BoxFit.fill,
+                return new Image.asset(
+                  "assets/bracelets/bracelet_big.png",
+                  fit: BoxFit.scaleDown,
                 );
               },
               itemCount: 10,
-              viewportFraction: 0.8,
-              scale: 0.9,
             ),
           ),
           Center(
             child: Container(
-              width: MediaQuery.of(context).size.width ,
+              width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
-                  return new Image.network(
-                    "http://retraites-vipassana.fr/wp-content/uploads/2016/06/cropped-carre-rouge.jpg",
-                    fit: BoxFit.fill,
+                  return new Image.asset(
+                    "assets/cadrans/cadran_red_white.png",
+                    fit: BoxFit.scaleDown,
                   );
                 },
                 itemCount: 10,
-                viewportFraction: 0.8,
-                scale: 0.9,
               ),
             ),
           ),
           Center(
             child: Container(
-              width: MediaQuery.of(context).size.width ,
-              height: MediaQuery.of(context).size.height / 2,
-              child: Swiper(
-                itemBuilder: (BuildContext context, int index) {
-                  return new Image.network(
-                    "http://retraites-vipassana.fr/wp-content/uploads/2016/06/cropped-carre-rouge.jpg",
-                    fit: BoxFit.fill,
-                  );
-                },
-                itemCount: 10,
-                viewportFraction: 0.8,
-                scale: 0.9,
+              child: Image.asset(
+                "assets/cadrans/cadran.png",
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -70,18 +57,18 @@ class _ShowroomState extends State<Showroom> {
     );
   }
 
+  List<Image> getAllBracelets() {
+    var myDir = Directory('./bracelets/');
 
-  List<Image> getAllBracelets(){
-    var myDir = Directory('/bracelets/');
-
-    List<FileSystemEntity> _images = myDir.listSync(recursive: true, followLinks: false);
+    List<FileSystemEntity> _images =
+        myDir.listSync(recursive: true, followLinks: false);
     print(_images[1]);
     List<FileImage> braceletsImg;
-  /*
+    /*
     for(var i = 0; i < _images.length; i++){
       braceletsImg.add(_images[i]);
     }
   */
-  return null;
+    return null;
   }
 }
