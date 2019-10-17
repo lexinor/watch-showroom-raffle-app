@@ -4,7 +4,6 @@ import 'package:augarde_showroom/raffle.dart';
 import 'package:augarde_showroom/showroom.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 
 void main() =>
     runApp(MaterialApp(
