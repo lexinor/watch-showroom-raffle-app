@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Showroom extends StatefulWidget {
   @override
@@ -65,7 +64,7 @@ class _ShowroomState extends State<Showroom> {
             width: MediaQuery.of(context).size.width,
             bottom: 1,
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: _launchURL,
               child: Text("Ajouter au panier"),
               color: Colors.indigo,
               textColor: Colors.white,
@@ -77,5 +76,12 @@ class _ShowroomState extends State<Showroom> {
     );
   }
 
-
+  _launchURL() async {
+    const url = 'https://www.augarde.com';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }

@@ -36,7 +36,7 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ),
                 Container(
-                  color: Colors.transparent,
+                  color: Colors.black12,
                   margin: EdgeInsets.all(20.0),
                   padding: EdgeInsets.all(20.0),
                   width: MediaQuery.of(context).size.width,
@@ -66,11 +66,11 @@ class _HomeBodyState extends State<HomeBody> {
                   )
                 ),
                 Container(
-                    color: Colors.indigoAccent,
+                    color: Colors.black12,
                     margin: EdgeInsets.all(20.0),
                     padding: EdgeInsets.all(20.0),
                     width: MediaQuery.of(context).size.width,
-                    child: Text('Raffles', style: TextStyle(fontSize: 25))),
+                    child: Text('Raffles', style: TextStyle(fontSize: 25, color: Colors.black))),
                 Expanded(
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
