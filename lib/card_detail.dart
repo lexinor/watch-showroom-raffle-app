@@ -6,6 +6,8 @@ class CardDetail extends StatefulWidget {
 }
 
 class _CardDetailState extends State<CardDetail> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

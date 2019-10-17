@@ -1,4 +1,4 @@
-import 'package:augarde_showroom/main.dart';
+import 'package:augarde_showroom/card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -24,15 +24,13 @@ class _HomeBodyState extends State<HomeBody> {
                     itemBuilder: (BuildContext context, int index) {
                       return new Image.network(
                         "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
-                        fit: BoxFit.scaleDown,
+                        fit: BoxFit.contain,
                       );
                     },
                     itemCount: 10,
                     viewportFraction: 0.8,
                     scale: 0.9,
                     autoplay: true,
-                    pagination: new SwiperPagination(),
-                    control: new SwiperControl(),
                   ),
                 ),
                 Container(
@@ -41,8 +39,7 @@ class _HomeBodyState extends State<HomeBody> {
                   padding: EdgeInsets.all(20.0),
                   width: MediaQuery.of(context).size.width,
                   // Access width of the parent
-                  child: Text(
-                    'Products'.toUpperCase(),
+                  child: Text('Products',
                     style: TextStyle(
                       fontSize: 25,
                     ),
@@ -51,7 +48,7 @@ class _HomeBodyState extends State<HomeBody> {
                 Expanded(
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
-                      return CardProduct();
+                      return CustomCard();
                     },
                     itemCount: 10,
                     viewportFraction: 0.8,
@@ -60,22 +57,20 @@ class _HomeBodyState extends State<HomeBody> {
                 ),
                 Container(
                     color: Colors.indigoAccent,
-                    margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 10.0),
+                    margin: EdgeInsets.all(20.0),
+                    padding: EdgeInsets.all(20.0),
+                    width: MediaQuery.of(context).size.width,
                     child: Text('Raffles', style: TextStyle(fontSize: 25))),
                 Expanded(
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
                       return new Image.network(
                         "http://via.placeholder.com/288x188",
-                        fit: BoxFit.fill,
+                        fit: BoxFit.fitWidth,
                       );
                     },
                     itemCount: 10,
-                    viewportFraction: 0.8,
-                    scale: 0.9,
                     autoplay: true,
-                    pagination: new SwiperPagination(),
-                    control: new SwiperControl(),
                   ),
                 )
               ],
