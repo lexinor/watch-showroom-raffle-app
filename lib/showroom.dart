@@ -77,20 +77,5 @@ class _ShowroomState extends State<Showroom> {
     );
   }
 
-  /// Not working ATM
-  List<Image> getAllBracelets() {
-    var myDir = Directory('assets/cadrans/cadran.png');
-    File file = new File("assets/cadrans/cadran.png");
-    print(file);
-    List<FileSystemEntity> _images =
-        myDir.listSync(recursive: true, followLinks: false);
-    print(_images[1]);
-    List<FileImage> braceletsImg;
-    /*
-    for(var i = 0; i < _images.length; i++){
-      braceletsImg.add(_images[i]);
-    }
-  */
-    return null;
-  }
+
 }
