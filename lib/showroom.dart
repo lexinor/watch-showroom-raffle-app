@@ -34,8 +34,6 @@ class _ShowroomState extends State<Showroom> {
             top: MediaQuery.of(context).size.height / 3.5,
             left: MediaQuery.of(context).size.width / 2.67,
             child: Container(
-
-              color: Colors.black38,
               child: Image.asset(
                 "assets/cadrans/cadran.png",
                 height: 122,
@@ -50,7 +48,6 @@ class _ShowroomState extends State<Showroom> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 10,
-              color: Colors.black38,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return new Image.asset(
