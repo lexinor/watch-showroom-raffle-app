@@ -1,7 +1,11 @@
+
+import 'package:augarde_showroom/models/bracelet.dart';
+import 'package:augarde_showroom/models/cadran.dart';
+import 'package:augarde_showroom/services/webservice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart'
 
 class Showroom extends StatefulWidget {
   @override
@@ -19,16 +23,24 @@ class _ShowroomState extends State<Showroom> {
             /// Block bracelet
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: Swiper(
-              itemBuilder: (BuildContext context, int index) {
-                return new Image.asset(
-                  "assets/bracelets/bracelet_little.png",
-                  fit: BoxFit.fitHeight,
-                  colorBlendMode: BlendMode.difference,
-                );
+            child: FutureBuilder (
+              future: WebService().load(Bracelet.all),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Swiper(
+                    itemBuilder: (BuildContext context, int index) {
+                      return new Image.network(
+                        snapshot.data[index].image,
+                        fit: BoxFit.fitHeight,
+                        colorBlendMode: BlendMode.difference,
+                      );
+                    },
+                    itemCount: snapshot.data.length,
+                  );
+                }
+                return CircularProgressIndicator();
               },
-              itemCount: 10,
-            ),
+            )
           ),
           Positioned(
             top: MediaQuery.of(context).size.height / 3.5,
@@ -48,16 +60,37 @@ class _ShowroomState extends State<Showroom> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 10,
-              child: Swiper(
-                itemBuilder: (BuildContext context, int index) {
-                  return new Image.asset(
-                    "assets/cadrans/cadran_red_white.png",
-                    fit: BoxFit.scaleDown,
-                    colorBlendMode: BlendMode.difference,
-                  );
+              child: FutureBuilder (
+                future: WebService().load(Cadran.all),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Swiper(
+                      itemBuilder: (BuildContext context, int index) {
+                        return new Image.network(
+                          snapshot.data[index].image,
+                          fit: BoxFit.scaleDown,
+                          colorBlendMode: BlendMode.difference,
+                        );
+                      },
+                      itemCount: snapshot.data.length,
+                    );
+                  }
+                  return CircularProgressIndicator();
                 },
-                itemCount: 10,
-              ),
+              )
+
+
+
+//              Swiper(
+//                itemBuilder: (BuildContext context, int index) {
+//                  return new Image.asset(
+//                    "assets/cadrans/cadran_red_white.png",
+//                    fit: BoxFit.scaleDown,
+//                    colorBlendMode: BlendMode.difference,
+//                  );
+//                },
+//                itemCount: 10,
+//              ),
             ),
           ),
           Positioned(
@@ -85,3 +118,5 @@ class _ShowroomState extends State<Showroom> {
     }
   }
 }
+
+
