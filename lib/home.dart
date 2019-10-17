@@ -1,4 +1,6 @@
 import 'package:augarde_showroom/card.dart';
+import 'package:augarde_showroom/models/product.dart';
+import 'package:augarde_showroom/services/webservice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -46,14 +48,30 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ),
                 Expanded(
-                  child: new Swiper(
-                    itemBuilder: (BuildContext context, int index) {
-                      return CustomCard();
+                  child: FutureBuilder(
+                    future: WebService().load(Product.all),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Swiper(
+                          itemBuilder: (BuildContext context, int index) {
+                            return CustomCard(product: snapshot.data[index],);
+                          },
+                          itemCount: snapshot.data.length,
+                          viewportFraction: 0.8,
+                          scale: 0.9,
+                        );
+                      }
+                      return CircularProgressIndicator();
                     },
-                    itemCount: 10,
-                    viewportFraction: 0.8,
-                    scale: 0.9,
-                  ),
+                  )
+//                  new Swiper(
+//                    itemBuilder: (BuildContext context, int index) {
+//                      return CustomCard(product: products[index],);
+//                    },
+//                    itemCount: products.length,
+//                    viewportFraction: 0.8,
+//                    scale: 0.9,
+//                  ),
                 ),
                 Container(
                     color: Colors.indigoAccent,
