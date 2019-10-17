@@ -100,7 +100,7 @@ class _ShowroomState extends State<Showroom> {
           Positioned(
             width: MediaQuery.of(context).size.width,
             bottom: 1,
-            child: MaterialButton(
+            child: RaisedButton(
               onPressed: _launchURL,
               child: Text("Ajouter au panier"),
               color: Colors.black,
