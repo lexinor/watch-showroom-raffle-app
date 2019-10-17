@@ -18,27 +18,21 @@ class _CustomCardState extends State<CustomCard> {
     return Center(
       child: Card(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-//          children: <Widget>[
-//            new ListTile(
-//              leading: Image.network(
-//                "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
-//                fit: BoxFit.fill,
-//              ),
-//              title: Text('Montre 1'),
-//              subtitle: Text('Petite description de la montre'),
-//              onTap: onCardTap,
-//            ),
-//          ],
+          mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          new ListTile(
-                  leading: Image.network(
-                    product.image,
-                    fit: BoxFit.fill,
-                    ),
+          ClipRect(
+            child: Image.network(product.image, height: 100),
+          ),
+          ListTile(
+//                  leading: Image.network(
+//                    product.image,
+//                    fit: BoxFit.fitWidth,
+//                    alignment: Alignment.topCenter,
+//                    ),
                   title: Text(product.name),
                   subtitle: Text(product.price.toString() + '€'),
-                )
+                  onTap: onCardTap,
+          )
         ],
         ),
       ),
