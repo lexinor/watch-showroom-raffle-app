@@ -16,7 +16,8 @@ class _ShowroomState extends State<Showroom> {
       child: Stack(
         fit: StackFit.passthrough,
         children: <Widget>[
-          Container( /// Block bracelet
+          Container(
+            /// Block bracelet
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Swiper(
@@ -60,6 +61,17 @@ class _ShowroomState extends State<Showroom> {
               ),
             ),
           ),
+          Positioned(
+            width: MediaQuery.of(context).size.width,
+            bottom: 1,
+            child: MaterialButton(
+              onPressed: () {},
+              child: Text("Ajouter au panier"),
+              color: Colors.indigo,
+              textColor: Colors.white,
+              hoverColor: Colors.indigoAccent,
+            ),
+          )
         ],
       ),
     );
@@ -68,7 +80,7 @@ class _ShowroomState extends State<Showroom> {
   /// Not working ATM
   List<Image> getAllBracelets() {
     var myDir = Directory('assets/cadrans/cadran.png');
-    
+
     File file = new File("assets/cadrans/cadran.png");
     print(file);
     List<FileSystemEntity> _images =
