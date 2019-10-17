@@ -15,10 +15,10 @@ class Raffle extends StatelessWidget {
               fit: BoxFit.fitWidth,
             ),
             Container(
-              color: Colors.indigoAccent,
-              margin: EdgeInsets.all(20.0),
-              padding: EdgeInsets.all(20.0),
-              width: MediaQuery.of(context).size.width / 0.9,
+              color: Colors.transparent,
+              margin: EdgeInsets.fromLTRB(0, 20, 0, 5),
+              padding: EdgeInsets.all(10.0),
+              width: MediaQuery.of(context).size.width,
               // Access width of the parent
               child: Text('Limité au secteur suivant : ',
                 style: TextStyle(
