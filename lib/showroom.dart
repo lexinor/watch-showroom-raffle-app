@@ -80,7 +80,6 @@ class _ShowroomState extends State<Showroom> {
   /// Not working ATM
   List<Image> getAllBracelets() {
     var myDir = Directory('assets/cadrans/cadran.png');
-
     File file = new File("assets/cadrans/cadran.png");
     print(file);
     List<FileSystemEntity> _images =

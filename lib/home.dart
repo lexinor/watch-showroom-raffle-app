@@ -36,7 +36,7 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ),
                 Container(
-                  color: Colors.indigoAccent,
+                  color: Colors.transparent,
                   margin: EdgeInsets.all(20.0),
                   padding: EdgeInsets.all(20.0),
                   width: MediaQuery.of(context).size.width,
@@ -64,14 +64,6 @@ class _HomeBodyState extends State<HomeBody> {
                       return CircularProgressIndicator();
                     },
                   )
-//                  new Swiper(
-//                    itemBuilder: (BuildContext context, int index) {
-//                      return CustomCard(product: products[index],);
-//                    },
-//                    itemCount: products.length,
-//                    viewportFraction: 0.8,
-//                    scale: 0.9,
-//                  ),
                 ),
                 Container(
                     color: Colors.indigoAccent,
