@@ -12,43 +12,51 @@ class Showroom extends StatefulWidget {
 class _ShowroomState extends State<Showroom> {
   @override
   Widget build(BuildContext context) {
-    //getAllBracelets();
     return Container(
       child: Stack(
+        fit: StackFit.passthrough,
         children: <Widget>[
-          Container(
+          Container( /// Block bracelet
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Swiper(
               itemBuilder: (BuildContext context, int index) {
                 return new Image.asset(
-                  "assets/bracelets/bracelet_big.png",
-                  fit: BoxFit.scaleDown,
+                  "assets/bracelets/bracelet_little.png",
+                  fit: BoxFit.fitHeight,
+                  colorBlendMode: BlendMode.difference,
                 );
               },
               itemCount: 10,
             ),
           ),
-          Center(
+          Positioned(
+            top: MediaQuery.of(context).size.height / 3.5,
+            left: MediaQuery.of(context).size.width / 2.67,
+            child: Container(
+              child: Image.asset(
+                "assets/cadrans/cadran.png",
+                height: 122,
+                width: 100,
+                fit: BoxFit.contain,
+                colorBlendMode: BlendMode.difference,
+              ),
+            ),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height / 3.15,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery.of(context).size.height / 10,
               child: Swiper(
                 itemBuilder: (BuildContext context, int index) {
                   return new Image.asset(
                     "assets/cadrans/cadran_red_white.png",
                     fit: BoxFit.scaleDown,
+                    colorBlendMode: BlendMode.difference,
                   );
                 },
                 itemCount: 10,
-              ),
-            ),
-          ),
-          Center(
-            child: Container(
-              child: Image.asset(
-                "assets/cadrans/cadran.png",
-                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -57,9 +65,12 @@ class _ShowroomState extends State<Showroom> {
     );
   }
 
+  /// Not working ATM
   List<Image> getAllBracelets() {
-    var myDir = Directory('./bracelets/');
-
+    var myDir = Directory('assets/cadrans/cadran.png');
+    
+    File file = new File("assets/cadrans/cadran.png");
+    print(file);
     List<FileSystemEntity> _images =
         myDir.listSync(recursive: true, followLinks: false);
     print(_images[1]);
