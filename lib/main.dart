@@ -29,7 +29,6 @@ class HomeState extends State<Home>{
             color: Colors.black,
             fontSize: 25.0),
         ),
-        centerTitle: true,
         backgroundColor: Colors.white,
       ),
       body: _onItemTapped(_selectedIndex),
@@ -72,40 +71,6 @@ class HomeState extends State<Home>{
   }
 }
 
-
-
-
-class CardProduct extends StatefulWidget {
-  @override
-  _CardProductState createState() => _CardProductState();
-}
-
-class _CardProductState extends State<CardProduct> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Card(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            new ListTile(
-              leading: Image.network(
-                "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
-                fit: BoxFit.fill,
-              ),
-              title: Text('Montre 1'),
-              subtitle: Text('Petite description de la montre'),
-              onTap: onCardTap,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-  void onCardTap(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => CardDetail()));
-  }
-}
 
 
 

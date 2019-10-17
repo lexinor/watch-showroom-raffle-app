@@ -16,21 +16,20 @@ class _HomeBodyState extends State<HomeBody> {
       child: InkWell(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height * 1.5,
           child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Expanded(
-                  child: new Swiper(
+                  flex: 2,
+                  child:  Swiper(
                     itemBuilder: (BuildContext context, int index) {
-                      return new Image.network(
-                        "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
-                        fit: BoxFit.contain,
-                      );
+                      return Image.asset('assets/others/IMG-20190905-WA0006.jpg',
+                      fit: BoxFit.fill);
                     },
                     itemCount: 10,
-                    viewportFraction: 0.8,
+                    viewportFraction: 1,
                     scale: 0.9,
                     autoplay: true,
                   ),
@@ -48,6 +47,7 @@ class _HomeBodyState extends State<HomeBody> {
                   ),
                 ),
                 Expanded(
+                  flex: 1,
                   child: FutureBuilder(
                     future: WebService().load(Product.all),
                     builder: (context, snapshot) {
@@ -72,6 +72,7 @@ class _HomeBodyState extends State<HomeBody> {
                     width: MediaQuery.of(context).size.width,
                     child: Text('Raffles', style: TextStyle(fontSize: 25, color: Colors.black))),
                 Expanded(
+                  flex: 1,
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
                       return new Image.network(
