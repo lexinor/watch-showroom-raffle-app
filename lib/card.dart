@@ -17,27 +17,19 @@ class _CustomCardState extends State<CustomCard> {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        semanticContainer: true,
-        clipBehavior: Clip.antiAliasWithSaveLayer,
         //child: Image.network(product.image),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 5,
       margin: EdgeInsets.all(10),
-        child: Column(
+        child: Column (
           //mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Image.network(product.image,
               fit: BoxFit.fill,
-            height: 100,
           ),
           ListTile(
-//                  leading: Image.network(
-//                    product.image,
-//                    fit: BoxFit.fitWidth,
-//                    alignment: Alignment.topCenter,
-//                    ),
                   title: Text(product.name),
                   subtitle: Text(product.price.toString() + '€'),
                   onTap: onCardTap,

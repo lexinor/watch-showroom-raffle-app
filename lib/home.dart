@@ -16,17 +16,31 @@ class _HomeBodyState extends State<HomeBody> {
       child: InkWell(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 1.5,
+          height: MediaQuery.of(context).size.height * 1.6,
           child: SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Expanded(
                   flex: 2,
-                  child:  Swiper(
+                  child: Swiper(
                     itemBuilder: (BuildContext context, int index) {
-                      return Image.asset('assets/others/IMG-20190905-WA0006.jpg',
-                      fit: BoxFit.fill);
+                      return Stack(
+                        children: <Widget>[
+                          Image.asset('assets/others/IMG-20190905-WA0006.jpg',
+                          fit: BoxFit.fill),
+                          Align(
+                          child: Text('NOUVEAUTÉS',
+                            style: TextStyle(
+                              fontSize: 45,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                            alignment: FractionalOffset.bottomLeft,
+                          ),
+                        ],
+                      );
                     },
                     itemCount: 10,
                     viewportFraction: 1,
@@ -75,9 +89,22 @@ class _HomeBodyState extends State<HomeBody> {
                   flex: 1,
                   child: new Swiper(
                     itemBuilder: (BuildContext context, int index) {
-                      return new Image.network(
-                        "http://via.placeholder.com/288x188",
-                        fit: BoxFit.fitWidth,
+                      return Stack(
+                        children: <Widget>[
+                          Image.asset('assets/others/IMG-20190902-WA0033.jpg',
+                              fit: BoxFit.fitWidth),
+                          Align(
+                            child: Text('AUGARDE 500',
+                              style: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            alignment: FractionalOffset.bottomLeft,
+                          ),
+                        ],
+                        fit: StackFit.expand,
                       );
                     },
                     itemCount: 10,
