@@ -1,5 +1,6 @@
 import 'package:augarde_showroom/card_detail.dart';
 import 'package:augarde_showroom/models/product.dart';
+import 'package:augarde_showroom/showroom.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatefulWidget {

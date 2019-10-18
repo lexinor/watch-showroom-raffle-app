@@ -27,17 +27,20 @@ class _HomeBodyState extends State<HomeBody> {
                     itemBuilder: (BuildContext context, int index) {
                       return Stack(
                         children: <Widget>[
-                          Image.asset('assets/others/IMG-20190905-WA0006.jpg',
+                          Image.asset('assets/others/IMG-20190910-WA0006.jpg',
                           fit: BoxFit.fill),
-                          Align(
-                          child: Text('NOUVEAUTÉS',
-                            style: TextStyle(
-                              fontSize: 45,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                          Container(
+                          child: Align(
+                            child: Text('NOUVEAUTÉS',
+                              style: TextStyle(
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
                             alignment: FractionalOffset.bottomLeft,
+                          ),
+                            margin: EdgeInsets.only(left: 10),
                           ),
                         ],
                       );
@@ -93,15 +96,18 @@ class _HomeBodyState extends State<HomeBody> {
                         children: <Widget>[
                           Image.asset('assets/others/IMG-20190902-WA0033.jpg',
                               fit: BoxFit.fitWidth),
-                          Align(
-                            child: Text('AUGARDE 500',
-                              style: TextStyle(
-                                fontSize: 45,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                          Container(
+                            child: Align(
+                              child: Text('AUGARDE 500',
+                                style: TextStyle(
+                                  fontSize: 45,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
                               ),
+                              alignment: FractionalOffset.bottomLeft,
                             ),
-                            alignment: FractionalOffset.bottomLeft,
+                            margin: EdgeInsets.only(left: 10),
                           ),
                         ],
                         fit: StackFit.expand,

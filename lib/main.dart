@@ -1,7 +1,7 @@
-import 'package:augarde_showroom/card_detail.dart';
 import 'package:augarde_showroom/home.dart';
 import 'package:augarde_showroom/raffle.dart';
 import 'package:augarde_showroom/showroom.dart';
+import 'package:augarde_showroom/user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -35,12 +35,16 @@ class HomeState extends State<Home>{
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         fixedColor: Colors.black,
+        unselectedItemColor: Colors.grey,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(
               icon: Icon(Icons.business), title: Text("Raffles")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.slideshow), title: Text("Showroom"))
+              icon: Icon(Icons.slideshow), title: Text("Showroom")),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle), title: Text('Account')),
         ],
       ),
     );
@@ -61,6 +65,10 @@ class HomeState extends State<Home>{
         return Showroom();
       }
       break;
+
+      case 3: {
+        return UserPage();
+      }
 
       default: {
         return HomeBody();
