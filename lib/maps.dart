@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+//import 'package:qr_flutter/qr_flutter.dart';
 import 'package:augarde_showroom/qrcode.dart';
 
 
@@ -56,7 +56,7 @@ class _MapsState extends State<Maps> {
                   ),
                 ),
                 Container(
-                  child: Image.asset('assets/others/IMG-20190905-WA0006.jpg'),
+                  child: Image.asset('assets/others/IMG-20190902-WA0033.jpg'),
                 ),
                 Container(
                   color: Colors.transparent,
