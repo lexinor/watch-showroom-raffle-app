@@ -1,4 +1,3 @@
-import 'package:augarde_showroom/card_detail.dart';
 import 'package:augarde_showroom/home.dart';
 import 'package:augarde_showroom/raffle.dart';
 import 'package:augarde_showroom/showroom.dart';
