@@ -1,4 +1,4 @@
-# augarde-showroom-raffle
+# watch-showroom-raffle
 
 Salut tout le monde!
 Voicis des liens utiles pour commencer le projet:
