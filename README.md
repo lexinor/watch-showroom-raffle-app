@@ -1,7 +1,6 @@
 # watch-showroom-raffle
 
-Salut tout le monde!
-Voicis des liens utiles pour commencer le projet:
+Projet réalisé dans le carde d'un Hackaton en 4e année de Master
 
 ## Flutter
 https://flutter.dev/ / Doc: https://flutter.dev/docs
@@ -17,6 +16,3 @@ Divers exemples de raffles: https://frenchraffle.com/accueil
 ## Design?
 On se base sur www.augarde.com - Épuré / noir & blanc
 
-## Drive
-Demandez l'accès en modification:
-https://drive.google.com/drive/folders/1738NLoAOUQJpaPvYderQD07DcSwaWKDd?usp=sharing
