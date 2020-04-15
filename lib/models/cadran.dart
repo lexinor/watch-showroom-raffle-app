@@ -1,5 +1,5 @@
-import 'package:augarde_showroom/constants.dart';
-import 'package:augarde_showroom/services/webservice.dart';
+import 'package:watchshowroomapp/constants.dart';
+import 'package:watchshowroomapp/services/webservice.dart';
 import 'dart:convert';
 
 class Cadran {

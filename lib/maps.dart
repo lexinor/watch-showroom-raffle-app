@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 //import 'package:qr_flutter/qr_flutter.dart';
-import 'package:augarde_showroom/qrcode.dart';
+import 'package:watchshowroomapp/qrcode.dart';
 
 
 class Maps extends StatefulWidget {

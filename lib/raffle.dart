@@ -1,4 +1,4 @@
-import 'package:augarde_showroom/maps.dart';
+import 'package:watchshowroomapp/maps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

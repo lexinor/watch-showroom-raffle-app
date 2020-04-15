@@ -1,6 +1,6 @@
-import 'package:augarde_showroom/card.dart';
-import 'package:augarde_showroom/models/product.dart';
-import 'package:augarde_showroom/services/webservice.dart';
+import 'package:watchshowroomapp/card.dart';
+import 'package:watchshowroomapp/models/product.dart';
+import 'package:watchshowroomapp/services/webservice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 

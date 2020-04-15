@@ -1,7 +1,7 @@
 
-import 'package:augarde_showroom/models/bracelet.dart';
-import 'package:augarde_showroom/models/cadran.dart';
-import 'package:augarde_showroom/services/webservice.dart';
+import 'package:watchshowroomapp/models/bracelet.dart';
+import 'package:watchshowroomapp/models/cadran.dart';
+import 'package:watchshowroomapp/services/webservice.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';

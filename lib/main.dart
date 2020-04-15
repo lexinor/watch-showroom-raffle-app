@@ -1,7 +1,7 @@
-import 'package:augarde_showroom/home.dart';
-import 'package:augarde_showroom/raffle.dart';
-import 'package:augarde_showroom/showroom.dart';
-import 'package:augarde_showroom/user.dart';
+import 'package:watchshowroomapp/home.dart';
+import 'package:watchshowroomapp/raffle.dart';
+import 'package:watchshowroomapp/showroom.dart';
+import 'package:watchshowroomapp/user.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
